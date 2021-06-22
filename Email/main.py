@@ -1,23 +1,23 @@
 import smtplib
+import random as r
+import datetime as dt
 
-# yahoo: smtp.mail.yahoo.com
-# yahoo Password: truytubhpstpuqef
+with open('quotes.txt', 'r') as f:
+    quotes = f.readlines()
+
+quote = r.choice(quotes)
 
 email = 'testdaine@gmail.com'
-password = ''
+password = 
 
-with smtplib.SMTP('smtp.gmail.com', port=587) as connection:
-    connection.starttls()
-    connection.login(user=email, password=password)
-    connection.sendmail(
-        from_addr=email, 
-        to_addrs='dainetest@yahoo.com', 
-        msg='Subject:Hello World!\n\nMy first cls email!')
+now = dt.datetime.now()
+today = now.weekday()
 
-# with smtplib.SMTP('smtp.mail.yahoo.com', port=587) as connection:
-#     connection.starttls()
-#     connection.login(user='dainetest@yahoo.com', password='')
-#     connection.sendmail(
-#         from_addr='dainetest@yahoo.com', 
-#         to_addrs='testdaine@gmail.com', 
-#         msg='Subject:Hello World!\n\nMy first cls email!')
+if today == 1:
+    with smtplib.SMTP('smtp.gmail.com', port=587) as connection:
+        connection.starttls()
+        connection.login(user=email, password=password)
+        connection.sendmail(
+            from_addr=email, 
+            to_addrs='daine.bigham@gmail.com', 
+            msg=f'Subject:Monday Motivational Quote\n\n{quote}')
