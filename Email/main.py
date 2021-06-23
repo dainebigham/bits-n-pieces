@@ -8,7 +8,7 @@ with open('quotes.txt', 'r') as f:
 quote = r.choice(quotes)
 
 email = 'testdaine@gmail.com'
-password = 
+password = ''
 
 now = dt.datetime.now()
 today = now.weekday()
